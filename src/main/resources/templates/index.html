@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie App</title>
+</head>
+<body>
+<h1>Add a Movie</h1>
+<form th:action="@{/add}" th:object="${movie}" method="post">
+    Title: <input type="text" th:field="*{title}" required /> <br/>
+    Rating: <input type="number" th:field="*{rating}" min="1" max="10" required /> <br/>
+    <button type="submit">Add Movie</button>
+</form>
+
+<h2>All Movies</h2>
+
+<div th:each="m : ${movies}" style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 8px;">
+    <h3 th:text="${m.title}">Movie Title</h3>
+    <p><strong>Rating:</strong> <span th:text="${m.rating}">Rating</span></p>
+    <p><strong>Starcast:</strong> <span th:text="${m.starcast}">Starcast</span></p>
+    <p><strong>Director:</strong> <span th:text="${m.directors}">Director</span></p>
+    <p><strong>Description:</strong> <span th:text="${m.description}">Description</span></p>
+</div>
+
+</body>
+</html>
