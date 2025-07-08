@@ -15,7 +15,7 @@ public class GeminiService {
      * Generates a 1–2 sentence description of the given movie title.
      */
     public String generateDescription(String title) {
-        String prompt = "Give me a 1-2 sentence description of the movie titled '" + title + "'";
+        String prompt = "Give me a 1-2 sentence description (100 characters max) of the movie titled '" + title + "'";
         return generateResponseFromGemini(prompt, "Description not available.");
     }
 
@@ -35,6 +35,11 @@ public class GeminiService {
         String prompt = "Give me just  name of the director for the movie '" + title + "'";
         return generateResponseFromGemini(prompt, "Director details not available.");
     }
+
+//    public String generateYear(String title) {
+//        String prompt = "When was \"" + title + "\" movie released (in year)?";
+//        return generateResponseFromGemini(prompt, "Date details not available");
+//    }
 
     /**
      * Shared method to send prompt to Gemini and handle response.
