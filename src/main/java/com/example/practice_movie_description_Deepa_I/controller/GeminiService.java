@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GeminiService {
 
+    //Hey this is Ali
+
     private static final String MODEL_NAME = "gemini-2.0-flash-001";
 
     /**
@@ -21,7 +23,7 @@ public class GeminiService {
      * Returns 2–3 main star cast members of the given movie title.
      */
     public String generateStarcast(String title) {
-        String prompt = "Give me just name of 2-3 main actors for movie'" + title + "'";
+        String prompt = "Give me just name of 2-3 main actors for movie '" + title + "'";
 //        String prompt = "Give me 2-3 main star cast of the movie '" + title + "'";
         return generateResponseFromGemini(prompt, "Star cast details not available.");
     }
